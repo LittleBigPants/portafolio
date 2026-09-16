@@ -19,7 +19,7 @@ function DownloadButton() {
       <Button
         variant="primary"
         href={profile.cvPdf}
-        target="_blank"
+        download="CV-Juan-Manuel-Garcia.pdf"
         style={{ maxWidth: "250px" }}
       >
         <AiOutlineDownload />
