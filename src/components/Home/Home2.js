@@ -3,6 +3,11 @@ import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/foto.jpg";
 import Tilt from "react-parallax-tilt";
 
+// En celulares el tilt se activa al tocar y hace que la foto se mueva sola.
+const canHover =
+  typeof window !== "undefined" &&
+  window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
 function Home2() {
   return (
     <Container fluid className="home-about-section" id="about">
@@ -44,12 +49,8 @@ function Home2() {
             </p>
           </Col>
           <Col md={4} className="myAvtar">
-            <Tilt>
-              <img
-                src={myImg}
-                className="img-fluid profile-photo"
-                alt="Juan Manuel García"
-              />
+            <Tilt tiltEnable={canHover} className="profile-photo">
+              <img src={myImg} alt="Juan Manuel García" />
             </Tilt>
           </Col>
         </Row>
