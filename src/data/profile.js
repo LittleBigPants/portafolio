@@ -6,21 +6,21 @@ export const profile = {
   role: "Full-Stack Developer",
   location: "Rosario, Santa Fe, Argentina",
   email: "juanmanuel_garcia98@hotmail.com",
-  phone: "+54 341 355-0070",
+  phone: "(+54) 341 355-0070",
   whatsapp: "https://wa.me/5493413550070",
   github: "https://github.com/LittleBigPants",
   githubUser: "LittleBigPants",
   linkedin: "https://www.linkedin.com/in/juan-manuel-garcia-99952b270",
   cvPdf: "/CV-Juan-Manuel-Garcia.pdf",
   summary:
-    "Desarrollador Full-Stack con experiencia construyendo productos completos para clientes: aplicaciones web con Next.js, apps móviles con React Native y backends en Supabase/PostgreSQL, con integraciones como la API de WhatsApp de Meta. Trabajo con herramientas de IA para desarrollo (Claude Code, agentes y flujos automatizados) para entregar más rápido sin resignar calidad. Técnico en Programación (UTN) y estudiante de Inteligencia Artificial (UNR).",
+    "Desarrollador Full-Stack. Construyo aplicaciones web con Next.js, apps móviles con React Native y backends en Supabase/PostgreSQL, incluyendo integraciones como la API de WhatsApp de Meta. Trabajo con herramientas de IA para desarrollo (Claude Code, agentes y flujos automatizados) para entregar más rápido sin resignar calidad. Técnico en Programación (UTN) y estudiante de Inteligencia Artificial (UNR).",
 };
 
 export const experience = [
   {
     title: "Full-Stack Developer",
     org: "Plataforma de salud digital",
-    meta: "Cliente freelance (confidencial) · abr 2026 – presente",
+    meta: "Freelance (confidencial) · abr 2026 – presente",
     note: "Equipo de 2 desarrolladores · producto en pre-lanzamiento",
     bullets: [
       "Desarrollé de punta a punta una plataforma que automatiza el seguimiento de tratamientos: consola web para profesionales (Next.js) y app móvil para pacientes (React Native + Expo).",
@@ -84,20 +84,14 @@ export const projects = [
 ];
 
 export const education = [
-  {
-    title: "Técnico Universitario en Programación",
-    org: "Universidad Tecnológica Nacional (UTN)",
-    date: "2024 – 2026",
-  },
+  { title: "Técnico Universitario en Programación", detail: "UTN · 2024 – 2026" },
   {
     title: "Tecnicatura Universitaria en Inteligencia Artificial",
-    org: "Universidad Nacional de Rosario (UNR)",
-    date: "En curso (2.º año)",
+    detail: "UNR · En curso (2.º año)",
   },
   {
-    title: "Campamento de Programación Competitiva",
-    org: "ICPC Argentina",
-    date: "2025",
+    title: "Campamento de entrenamiento ICPC Argentina",
+    detail: "Programación competitiva · 2025",
   },
 ];
 
@@ -113,8 +107,29 @@ export const skills = [
 
 export const languages = [
   {
-    label: "Inglés",
-    items: "Intermedio · Auxiliar Bilingüe Español-Inglés (Instituto Santa María Josefa Rossello)",
+    title: "Inglés — Intermedio",
+    detail: "Auxiliar Bilingüe Español-Inglés, Instituto Santa María Josefa Rossello",
   },
-  { label: "Español", items: "Nativo" },
+  { title: "Español — Nativo" },
+];
+
+// Proyectos tal como aparecen en el CV.
+export const cvProjects = [
+  {
+    title: "Sitio web de estudio de desarrollo",
+    link: "https://www.pyrux.com.ar",
+    linkLabel: "pyrux.com.ar",
+    description:
+      "Diseñé y desarrollé desde cero un sitio multi-idioma (español/inglés) con animaciones y páginas de proyectos y precios.",
+    stack: "Next.js · TypeScript · Tailwind · Framer Motion",
+  },
+  {
+    title: "Goal Planner",
+    link: "https://www.goalplanner.com.ar",
+    linkLabel: "goalplanner.com.ar",
+    subtitle: "App web de planificación de objetivos · proyecto en equipo de 2",
+    description:
+      "Aplicación que conecta objetivos anuales con tareas y hábitos diarios en un calendario, con seguimiento de progreso. Desarrollé la vista semanal del calendario, la creación y edición de tareas y hábitos, el login con Google, los recordatorios por email y las métricas de progreso.",
+    stack: "Next.js · TypeScript · Supabase · Tailwind · Radix UI",
+  },
 ];

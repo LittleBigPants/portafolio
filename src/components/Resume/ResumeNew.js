@@ -6,7 +6,7 @@ import { AiOutlineDownload } from "react-icons/ai";
 import {
   profile,
   experience,
-  projects,
+  cvProjects,
   education,
   skills,
   languages,
@@ -46,6 +46,15 @@ function LabeledList({ items }) {
   ));
 }
 
+function TitledList({ items }) {
+  return items.map((item) => (
+    <div key={item.title} style={{ marginBottom: 8 }}>
+      <strong>{item.title}</strong>
+      {item.detail && <div className="cv-muted">{item.detail}</div>}
+    </div>
+  ));
+}
+
 function ResumeNew() {
   return (
     <div>
@@ -58,17 +67,19 @@ function ResumeNew() {
             <h1>{profile.name}</h1>
             <h2>{profile.role}</h2>
             <div className="cv-contact">
-              <span>{profile.location}</span>
+              <a href={profile.github} target="_blank" rel="noreferrer">
+                {profile.github.replace("https://", "")}
+              </a>
+              <a href={profile.linkedin} target="_blank" rel="noreferrer">
+                {profile.linkedin.replace("https://www.", "")}
+              </a>
+            </div>
+            <div className="cv-contact" style={{ marginTop: 6 }}>
               <a href={profile.whatsapp} target="_blank" rel="noreferrer">
                 {profile.phone}
               </a>
               <a href={`mailto:${profile.email}`}>{profile.email}</a>
-              <a href={profile.github} target="_blank" rel="noreferrer">
-                GitHub
-              </a>
-              <a href={profile.linkedin} target="_blank" rel="noreferrer">
-                LinkedIn
-              </a>
+              <span>{profile.location}</span>
             </div>
           </header>
 
@@ -109,34 +120,30 @@ function ResumeNew() {
           </Section>
 
           <Section title="Proyectos">
-            {projects
-              .filter((project) => project.tag.startsWith("Proyecto"))
-              .map((project) => (
-                <div className="cv-item" key={project.key}>
-                  <div className="cv-item-title">
-                    {project.title}{" "}
-                    <span>
-                      ·{" "}
-                      <a href={project.demoLink} target="_blank" rel="noreferrer">
-                        {project.demoLink.replace("https://www.", "")}
-                      </a>
-                    </span>
-                  </div>
-                  <p style={{ margin: "4px 0" }}>{project.description}</p>
-                  <div className="cv-muted">
-                    <i>{project.stack}</i>
-                  </div>
+            {cvProjects.map((project) => (
+              <div className="cv-item" key={project.title}>
+                <div className="cv-item-title">
+                  {project.title}{" "}
+                  <span>
+                    ·{" "}
+                    <a href={project.link} target="_blank" rel="noreferrer">
+                      {project.linkLabel}
+                    </a>
+                  </span>
                 </div>
-              ))}
+                {project.subtitle && (
+                  <div className="cv-muted">{project.subtitle}</div>
+                )}
+                <p style={{ margin: "4px 0" }}>{project.description}</p>
+                <div className="cv-muted">
+                  <strong>Stack:</strong> {project.stack}
+                </div>
+              </div>
+            ))}
           </Section>
 
           <Section title="Formación">
-            {education.map((item) => (
-              <div key={item.title} style={{ marginBottom: 6 }}>
-                <strong>{item.title}</strong> — {item.org}{" "}
-                <span className="cv-muted">· {item.date}</span>
-              </div>
-            ))}
+            <TitledList items={education} />
           </Section>
 
           <Section title="Skills">
@@ -144,7 +151,7 @@ function ResumeNew() {
           </Section>
 
           <Section title="Idiomas">
-            <LabeledList items={languages} />
+            <TitledList items={languages} />
           </Section>
         </article>
 
