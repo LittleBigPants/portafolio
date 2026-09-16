@@ -1,14 +1,14 @@
 import React from "react";
 import { AiFillGithub, AiOutlineMail } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
-import { BsTelephone } from "react-icons/bs";
+import { BsWhatsapp } from "react-icons/bs";
 import { profile } from "../data/profile";
 
 export const socialLinks = [
   { href: profile.github, label: "GitHub", Icon: AiFillGithub },
   { href: profile.linkedin, label: "LinkedIn", Icon: FaLinkedinIn },
   { href: `mailto:${profile.email}`, label: "Email", Icon: AiOutlineMail },
-  { href: profile.phoneHref, label: "Teléfono", Icon: BsTelephone },
+  { href: profile.whatsapp, label: "WhatsApp", Icon: BsWhatsapp },
 ];
 
 function SocialLinks({ listClassName, linkClassName, linkStyle }) {

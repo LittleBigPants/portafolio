@@ -57,7 +57,12 @@ function Home() {
                 {profile.email}
               </a>
               <br />
-              <a className="purple" href={profile.phoneHref}>
+              <a
+                className="purple"
+                href={profile.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+              >
                 {profile.phone}
               </a>
             </p>

@@ -7,7 +7,7 @@ export const profile = {
   location: "Rosario, Santa Fe, Argentina",
   email: "juanmanuel_garcia98@hotmail.com",
   phone: "+54 341 355-0070",
-  phoneHref: "tel:+543413550070",
+  whatsapp: "https://wa.me/5493413550070",
   github: "https://github.com/LittleBigPants",
   githubUser: "LittleBigPants",
   linkedin: "https://www.linkedin.com/in/juan-manuel-garcia-99952b270",

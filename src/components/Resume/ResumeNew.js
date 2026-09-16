@@ -59,7 +59,9 @@ function ResumeNew() {
             <h2>{profile.role}</h2>
             <div className="cv-contact">
               <span>{profile.location}</span>
-              <a href={profile.phoneHref}>{profile.phone}</a>
+              <a href={profile.whatsapp} target="_blank" rel="noreferrer">
+                {profile.phone}
+              </a>
               <a href={`mailto:${profile.email}`}>{profile.email}</a>
               <a href={profile.github} target="_blank" rel="noreferrer">
                 GitHub
