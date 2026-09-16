@@ -1,5 +1,4 @@
 // Contenido del portafolio. Fuente: repositorio cv (CV.md).
-// Para agregar el CV en PDF: copialo a public/ y poné su nombre en `cvPdf` (ej. "/CV-Juan-Manuel-Garcia.pdf").
 
 export const profile = {
   name: "Juan Manuel García",
@@ -11,8 +10,8 @@ export const profile = {
   phoneHref: "tel:+543413550070",
   github: "https://github.com/LittleBigPants",
   githubUser: "LittleBigPants",
-  linkedin: "https://www.linkedin.com/in/juanmanuel-garcia-99952b270",
-  cvPdf: null,
+  linkedin: "https://www.linkedin.com/in/juan-manuel-garcia-99952b270",
+  cvPdf: "/CV-Juan-Manuel-Garcia.pdf",
   summary:
     "Desarrollador Full-Stack con experiencia construyendo productos completos para clientes: aplicaciones web con Next.js, apps móviles con React Native y backends en Supabase/PostgreSQL, con integraciones como la API de WhatsApp de Meta. Trabajo con herramientas de IA para desarrollo (Claude Code, agentes y flujos automatizados) para entregar más rápido sin resignar calidad. Técnico en Programación (UTN) y estudiante de Inteligencia Artificial (UNR).",
 };

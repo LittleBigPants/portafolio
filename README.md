@@ -1,15 +1,14 @@
 # Portafolio — Juan Manuel García
 
-Portafolio personal (Full-Stack Developer). Hecho con React y React-Bootstrap, basado en el template de
-[Soumyajit Behera](https://github.com/soumyajit4419/Portfolio).
+Portafolio personal (Full-Stack Developer). Hecho con React y React-Bootstrap.
 
 ## Editar contenido
 
 Todo el contenido (datos de contacto, experiencia, proyectos, formación, skills) está en
 [`src/data/profile.js`](src/data/profile.js). La fuente es el repositorio `cv` (CV.md).
 
-Para habilitar la descarga del CV en PDF: copiar el archivo a `public/` y poner su ruta en `cvPdf`
-(por ejemplo `"/CV-Juan-Manuel-Garcia.pdf"`).
+El CV descargable está en `public/CV-Juan-Manuel-Garcia.pdf`: para actualizarlo, reemplazar ese archivo (la ruta se
+configura en `cvPdf`).
 
 ## Desarrollo
 
