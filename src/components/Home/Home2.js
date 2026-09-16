@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/avatar.svg";
+import myImg from "../../Assets/foto.jpg";
 import Tilt from "react-parallax-tilt";
 
 function Home2() {
@@ -10,46 +10,46 @@ function Home2() {
         <Row>
           <Col md={8} className="home-about-description">
             <h1 style={{ fontSize: "2.6em" }}>
-              LET ME <span className="purple"> INTRODUCE </span> MYSELF
+              DÉJAME <span className="purple"> PRESENTARME </span>
             </h1>
             <p className="home-about-body">
-              I’m a Software Engineer who loves transforming ideas into
-              reliable, scalable products. Over time, I’ve explored several
-              technologies and found my passion in building high-performance
-              systems and intuitive user experiences.
+              Soy desarrollador Full-Stack y construyo productos completos para
+              clientes: desde la base de datos hasta la app que usa la gente.
               <br />
               <br />
-              I’m proficient in
+              Trabajo con
               <i>
-                <b className="purple">
-                  {" "}
-                  JavaScript, C++, Rust, Node.js, and Java{" "}
-                </b>
+                <b className="purple"> TypeScript, Next.js y React Native </b>
               </i>
-              — and I enjoy working across both backend and frontend stacks.
-              <br />
-              <br />
-              My key areas of interest include developing
+              en el frontend y mobile, y con
               <i>
-                <b className="purple">
-                  {" "}
-                  Web Applications, Blockchain Solutions,{" "}
-                </b>
+                <b className="purple"> Supabase, PostgreSQL y Node.js </b>
               </i>
-              and exploring new ways to bridge on-chain and off-chain systems.
+              en el backend.
               <br />
               <br />
-              Whenever possible, I love building projects with
-              <b className="purple"> Node.js </b> and modern frameworks like{" "}
+              Integro servicios como la
+              <b className="purple"> API de WhatsApp de Meta </b>
+              y uso
               <i>
-                <b className="purple">React.js</b> and{" "}
-                <b className="purple">Next.js</b>.
+                <b className="purple"> herramientas de IA para desarrollo </b>
               </i>
+              (Claude Code, agentes y flujos automatizados) para entregar más
+              rápido sin resignar calidad.
+              <br />
+              <br />
+              Soy Técnico en Programación (<b className="purple">UTN</b>) y
+              estudio Inteligencia Artificial en la{" "}
+              <b className="purple">UNR</b>.
             </p>
           </Col>
           <Col md={4} className="myAvtar">
             <Tilt>
-              <img src={myImg} className="img-fluid" alt="avatar" />
+              <img
+                src={myImg}
+                className="img-fluid profile-photo"
+                alt="Juan Manuel García"
+              />
             </Tilt>
           </Col>
         </Row>

@@ -759,3 +759,145 @@ button:focus {
 .fork-btn-inner::after {
   display: none !important;
 }
+
+.logo-text {
+  color: white;
+  font-size: 1.6em;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.profile-photo {
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: top;
+  box-shadow: 0 0 25px rgba(199, 112, 240, 0.35);
+}
+
+.project-card-placeholder {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.1em;
+  color: var(--imp-text-color);
+  background: linear-gradient(135deg, rgba(119, 53, 136, 0.35), rgba(20, 10, 30, 0.6));
+}
+
+.project-card-placeholder svg {
+  font-size: 2.5em;
+}
+
+.project-card-tag {
+  color: var(--imp-text-color);
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.project-card-stack {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9em;
+  margin-bottom: 12px;
+}
+
+/* --------- */
+/* CV (HTML) */
+/* --------- */
+
+.cv-sheet {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 40px;
+  color: white;
+  text-align: left;
+  position: relative;
+  background-color: rgba(20, 10, 30, 0.55);
+  border-radius: 16px;
+  box-shadow: 0 4px 5px 3px rgba(119, 53, 136, 0.459);
+}
+
+.cv-header h1 {
+  font-size: 2.2em;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.cv-header h2 {
+  font-size: 1.3em;
+  color: var(--imp-text-color);
+  margin-bottom: 12px;
+}
+
+.cv-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-size: 0.95em;
+}
+
+.cv-contact a,
+.cv-sheet a {
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: var(--imp-text-color);
+}
+
+.cv-section {
+  margin-top: 30px;
+}
+
+.cv-section h3 {
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--imp-text-color);
+  border-bottom: 1px solid rgba(199, 112, 240, 0.35);
+  padding-bottom: 6px;
+  margin-bottom: 14px;
+}
+
+.cv-item {
+  margin-bottom: 18px;
+}
+
+.cv-item-title {
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.cv-item-title span,
+.cv-muted {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.cv-muted {
+  font-size: 0.92em;
+}
+
+.cv-sheet ul {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.cv-sheet li {
+  margin-bottom: 4px;
+}
+
+@media (max-width: 767px) {
+  .cv-sheet {
+    padding: 22px 16px;
+    margin: 20px 0;
+  }
+  .cv-header h1 {
+    font-size: 1.7em;
+  }
+}
+
+.navbar-nav .nav-link {
+  white-space: nowrap;
+}

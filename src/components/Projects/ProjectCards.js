@@ -2,35 +2,46 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { CgWebsite } from "react-icons/cg";
-import { BsGithub } from "react-icons/bs";
+import { BsGithub, BsLock } from "react-icons/bs";
 
 function ProjectCards(props) {
   return (
     <Card className="project-card-view">
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" />
+      {props.imgPath ? (
+        <Card.Img variant="top" src={props.imgPath} alt={props.title} />
+      ) : (
+        <div className="project-card-placeholder">
+          <BsLock />
+          <span>Cliente confidencial</span>
+        </div>
+      )}
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
-        <Card.Text style={{ textAlign: "justify" }}>
+        {props.tag && <div className="project-card-tag">{props.tag}</div>}
+        <Card.Text style={{ textAlign: "left" }}>
           {props.description}
         </Card.Text>
-        <Button variant="primary" href={props.ghLink} target="_blank">
-          <BsGithub /> &nbsp;
-          {props.isBlog ? "Blog" : "GitHub"}
-        </Button>
-        {"\n"}
-        {"\n"}
+        {props.stack && <div className="project-card-stack">{props.stack}</div>}
 
-        {/* If the component contains Demo link and if it's not a Blog then, it will render the below component  */}
+        {props.ghLink && (
+          <Button
+            variant="primary"
+            href={props.ghLink}
+            target="_blank"
+            style={{ margin: "5px" }}
+          >
+            <BsGithub /> &nbsp;GitHub
+          </Button>
+        )}
 
-        {!props.isBlog && props.demoLink && (
+        {props.demoLink && (
           <Button
             variant="primary"
             href={props.demoLink}
             target="_blank"
-            style={{ marginLeft: "10px" }}
+            style={{ margin: "5px" }}
           >
-            <CgWebsite /> &nbsp;
-            {"Demo"}
+            <CgWebsite /> &nbsp;Ver sitio
           </Button>
         )}
       </Card.Body>

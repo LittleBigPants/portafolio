@@ -1,30 +1,29 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
-import macOs from "../../Assets/TechIcons/Apple MacOSX.svg";
-import chrome from "../../Assets/TechIcons/Google Chrome.svg";
-import vsCode from "../../Assets/TechIcons/vscode.svg";
-import intelliJ from "../../Assets/TechIcons/intellij-idea.svg";
+import { Row } from "react-bootstrap";
+import { SiGithub, SiNginx, SiLinux, SiFigma } from "react-icons/si";
+import { GoCopilot } from "react-icons/go";
+import { RiRobot2Line } from "react-icons/ri";
+import Git from "../../Assets/TechIcons/Git.svg";
+import Docker from "../../Assets/TechIcons/Docker.svg";
+import TechIcon from "./TechIcon";
+
+const tools = [
+  { name: "Git", src: Git },
+  { name: "GitHub", Icon: SiGithub },
+  { name: "Docker", src: Docker },
+  { name: "nginx", Icon: SiNginx },
+  { name: "Linux", Icon: SiLinux },
+  { name: "Figma", Icon: SiFigma },
+  { name: "Claude Code", Icon: RiRobot2Line },
+  { name: "GitHub Copilot", Icon: GoCopilot },
+];
 
 function Toolstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={macOs} alt="macOs" className="tech-icon-images" />
-        <div className="tech-icons-text">Mac Os</div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons ">
-        <img src={chrome} alt="Chrome" className="tech-icon-images" />
-        <div className="tech-icons-text">Google Chrome</div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons ">
-        <img src={vsCode} alt="vsCode" className="tech-icon-images" />
-        <div className="tech-icons-text">Vs Code</div>
-      </Col>
-
-      <Col xs={4} md={2} className="tech-icons ">
-        <img src={intelliJ} alt="go" className="tech-icon-images" />
-        <div className="tech-icons-text">IntelliJ</div>
-      </Col>
+      {tools.map((tool) => (
+        <TechIcon key={tool.name} {...tool} />
+      ))}
     </Row>
   );
 }

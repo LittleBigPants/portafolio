@@ -1,44 +1,44 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import { ImPointRight } from "react-icons/im";
+import { profile } from "../../data/profile";
 
 function AboutCard() {
   return (
     <Card className="quote-card-view">
       <Card.Body>
         <blockquote className="blockquote mb-0">
-          <p style={{ textAlign: "justify" }}>
-            Hi everyone! I’m <span className="purple">Soumyajit Behera</span>{" "}
-            from <span className="purple">Bhubaneswar, India</span>.
+          <p style={{ textAlign: "left" }}>
+            ¡Hola! Soy <span className="purple">{profile.name}</span>, de{" "}
+            <span className="purple">{profile.location}</span>.
             <br />
-            I’m currently working as a{" "}
-            <span className="purple">Software Developer</span> at{" "}
-            <span className="purple">Juspay</span>.
-            <br />I hold an Integrated M.Sc. (IMSc) in{" "}
-            <span className="purple">Mathematics and Computing</span> from{" "}
-            <span className="purple">BIT Mesra</span>.
+            Trabajo como{" "}
+            <span className="purple">Full-Stack Developer freelance</span>,
+            construyendo aplicaciones web, apps móviles y backends para
+            clientes.
+            <br />
+            Soy <span className="purple">Técnico en Programación (UTN)</span> y
+            estudio la{" "}
+            <span className="purple">
+              Tecnicatura en Inteligencia Artificial (UNR)
+            </span>
+            .
             <br />
             <br />
-            Outside of coding, I love engaging in activities that keep me
-            creative and inspired:
+            Algunas cosas que me definen:
           </p>
 
           <ul>
             <li className="about-activity">
-              <ImPointRight /> Playing Games 🎮
+              <ImPointRight /> Programación competitiva (ICPC Argentina 2025) 🏆
             </li>
             <li className="about-activity">
-              <ImPointRight /> Writing Tech Blogs ✍️
+              <ImPointRight /> Desarrollo asistido por IA 🤖
             </li>
             <li className="about-activity">
-              <ImPointRight /> Traveling and Exploring New Places 🌍
+              <ImPointRight /> Inglés intermedio · Auxiliar Bilingüe 🌍
             </li>
           </ul>
-
-          <p style={{ color: "rgb(155 126 172)" }}>
-            "Strive to build things that make a difference!"{" "}
-          </p>
-          <footer className="blockquote-footer">Soumyajit</footer>
         </blockquote>
       </Card.Body>
     </Card>
