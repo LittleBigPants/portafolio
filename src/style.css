@@ -918,3 +918,32 @@ button:focus {
 .navbar-nav .nav-link {
   white-space: nowrap;
 }
+
+/* Página de detalle de un proyecto */
+.project-detail {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
+  color: white;
+  text-align: left;
+}
+.project-detail-sub {
+  margin: 40px 0 20px;
+  font-size: 1.8em;
+}
+.project-case {
+  margin-bottom: 20px;
+  height: auto !important;
+}
+.project-case .card-title {
+  font-size: 1.3em;
+  margin-bottom: 14px;
+}
+
+/* Botón de idioma en la barra */
+.lang-switch {
+  background: none;
+  border: 1px solid rgba(200, 137, 230, 0.5);
+  border-radius: 5px;
+  margin-left: 10px;
+}

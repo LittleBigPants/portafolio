@@ -1,16 +1,17 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import SocialLinks from "./SocialLinks";
-import { profile } from "../data/profile";
+import { useLang } from "../i18n";
 
 function Footer() {
+  const { profile, t } = useLang();
   let date = new Date();
   let year = date.getFullYear();
   return (
     <Container fluid className="footer">
       <Row>
         <Col md="4" className="footer-copywright">
-          <h3>Desarrollado por {profile.name}</h3>
+          <h3>{t.footer} {profile.name}</h3>
         </Col>
         <Col md="4" className="footer-copywright">
           <h3>Copyright © {year} {profile.shortName}</h3>

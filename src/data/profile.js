@@ -1,4 +1,5 @@
-// Contenido del portafolio. Fuente: repositorio cv (CV.md).
+// Contenido del portafolio en español. Fuente: repositorio cv (CV.md).
+// La versión en inglés está en profile.en.js: todo cambio va a los dos.
 
 export const profile = {
   name: "Juan Manuel García",
@@ -12,8 +13,9 @@ export const profile = {
   githubUser: "LittleBigPants",
   linkedin: "https://www.linkedin.com/in/juan-manuel-garcia-99952b270",
   cvPdf: "/CV-Juan-Manuel-Garcia.pdf",
+  cvFile: "CV-Juan-Manuel-Garcia.pdf",
   summary:
-    "Desarrollador Full-Stack. Construyo aplicaciones web con Next.js, apps móviles con React Native y backends en Supabase/PostgreSQL, incluyendo integraciones como la API de WhatsApp de Meta. Trabajo con herramientas de IA para desarrollo (Claude Code, agentes y flujos automatizados) para entregar más rápido sin resignar calidad. Técnico en Programación (UTN) y estudiante de Inteligencia Artificial (UNR).",
+    "Técnico Universitario en Programación (UTN) y estudiante de Inteligencia Artificial (UNR). Construí de punta a punta una plataforma de salud digital, con consola web y app móvil, y llevé a producción el CMS editorial de MedMind. Trabajo con TypeScript, Next.js, React Native y Supabase, y con herramientas de IA para desarrollo (Claude Code, agentes y flujos automatizados).",
 };
 
 export const experience = [
@@ -45,30 +47,82 @@ export const experience = [
   },
 ];
 
+// Cada proyecto contesta lo que piden los formularios: qué problema resolvía,
+// qué hice yo y con qué herramientas. `cases` son problemas reales, contados
+// como en una entrevista; aparecen en la página de detalle (/project/<key>).
 export const projects = [
   {
     key: "salud",
     title: "Plataforma de salud digital",
     tag: "Experiencia · cliente freelance",
     description:
-      "Consola web para profesionales y app móvil para pacientes que automatizan el seguimiento de tratamientos. Backend en Supabase con permisos por rol y mensajería por WhatsApp (Meta Cloud API). Producto en pre-lanzamiento; cliente confidencial.",
-    stack: "Next.js · React Native · Expo · Supabase · Deno",
+      "Consola web para profesionales y app móvil para pacientes que automatizan el seguimiento de tratamientos. Producto en pre-lanzamiento; cliente confidencial.",
+    problem:
+      "Los profesionales seguían los tratamientos de sus pacientes a mano, por mensajes y planillas, y perdían el hilo entre una consulta y la siguiente.",
+    mine:
+      "Desarrollé la consola web y la app móvil, el backend con permisos por rol para que cada profesional vea solo a sus pacientes, y la mensajería por WhatsApp para los códigos de verificación y la bienvenida.",
+    stack: "Next.js · React Native · Expo · Supabase · PostgreSQL · Deno · Meta Cloud API",
   },
   {
     key: "medmind",
     title: "MedMind Linguistic Solutions",
     tag: "Experiencia · freelance",
     description:
-      "Backend y CMS (Strapi + PostgreSQL) para que el equipo editorial publique artículos sin intervención técnica; colaboración en el sitio público multi-idioma en Next.js y deploy con Docker y nginx.",
-    stack: "Next.js · Strapi · PostgreSQL · Docker · nginx",
+      "Sitio multi-idioma de una empresa de servicios lingüísticos para el sector médico, con un CMS para su equipo editorial.",
+    problem:
+      "El equipo editorial dependía de un desarrollador para publicar o corregir cada artículo.",
+    mine:
+      "Desarrollé el backend y el CMS (Strapi + PostgreSQL), colaboré en el sitio público en Next.js y lo desplegué en producción con Docker y nginx. Más adelante migré el sitio a un servidor propio.",
+    stack: "Next.js · TypeScript · Strapi · PostgreSQL · Docker · nginx",
     demoLink: "https://www.medmind.com.ar",
+  },
+  {
+    key: "bigpants",
+    title: "Bigpants",
+    tag: "Proyecto personal · agente de IA",
+    description:
+      "Agente autónomo que busca trabajo por mí: recorre portales, filtra los puestos, completa los formularios de postulación y me avisa por Telegram.",
+    problem:
+      "Buscar trabajo es repetitivo: los mismos portales todos los días y los mismos datos en cada formulario. Preferí entender el proceso y automatizarlo.",
+    mine:
+      "Lo diseñé y lo construí entero: un programador de tareas, un filtro en dos pasos con puntaje, postulaciones en paralelo, un panel web para ver qué hace y frenos que no dependen de la IA (topes diarios, pausa, registro de cada acción).",
+    stack: "Claude Code · Python · Playwright · Docker · Telegram",
+    cases: [
+      {
+        title: "Darle autonomía sin perder el control",
+        problem:
+          "Un agente que postula en mi nombre puede equivocarse muchas veces por hora, y yo no puedo revisar cada paso.",
+        cause:
+          "Las reglas escritas para la IA no alcanzan: si el límite lo vigila el mismo agente, un error suyo también se saltea el límite.",
+        fix:
+          "Puse los frenos fuera de la IA: un programador común decide cuándo corre, hay topes por día y por empresa que se verifican en código, y un resumen diario muestra todo lo que el agente cambió por su cuenta.",
+        learned:
+          "La autonomía de un agente se diseña con límites que el agente no puede modificar.",
+      },
+    ],
+  },
+  {
+    key: "servidor",
+    title: "Servidor propio",
+    tag: "Proyecto personal · infraestructura",
+    description:
+      "Una PC reutilizada con Debian donde corren mis servicios y proyectos.",
+    problem:
+      "Necesitaba un lugar propio para desplegar proyectos sin pagar un servicio en la nube por cada uno.",
+    mine:
+      "Instalé y administro el servidor: servicios en contenedores, copias de seguridad programadas, acceso remoto por red privada, publicación de sitios por túnel y encendido y apagado automáticos.",
+    stack: "Debian · Docker · nginx · Tailscale · Cloudflare Tunnel · Bash",
   },
   {
     key: "goalplanner",
     title: "Goal Planner",
     tag: "Proyecto · equipo de 2",
     description:
-      "App web que conecta objetivos anuales con tareas y hábitos diarios en un calendario, con seguimiento de progreso. Desarrollé la vista semanal del calendario, la creación y edición de tareas y hábitos, el login con Google, los recordatorios por email y las métricas de progreso.",
+      "App web que conecta objetivos anuales con tareas y hábitos diarios en un calendario, con seguimiento de progreso.",
+    problem:
+      "Los objetivos de largo plazo se pierden en el día a día si no están atados a tareas concretas en el calendario.",
+    mine:
+      "Desarrollé la vista semanal del calendario, la creación y edición de tareas y hábitos, el login con Google, los recordatorios por email y las métricas de progreso.",
     stack: "Next.js · TypeScript · Supabase · Tailwind · Radix UI",
     demoLink: "https://www.goalplanner.com.ar",
   },
@@ -77,7 +131,10 @@ export const projects = [
     title: "Sitio web de estudio de desarrollo",
     tag: "Proyecto",
     description:
-      "Diseñé y desarrollé desde cero un sitio multi-idioma (español/inglés) con animaciones y páginas de proyectos y precios.",
+      "Sitio multi-idioma (español/inglés) con animaciones y páginas de proyectos y precios.",
+    problem:
+      "El estudio necesitaba presentar sus servicios y precios a clientes de habla hispana e inglesa.",
+    mine: "Lo diseñé y lo desarrollé desde cero.",
     stack: "Next.js · TypeScript · Tailwind · Framer Motion",
     demoLink: "https://www.pyrux.com.ar",
   },

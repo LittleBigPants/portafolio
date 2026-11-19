@@ -3,27 +3,21 @@ import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
-import {
-  profile,
-  experience,
-  cvProjects,
-  education,
-  skills,
-  languages,
-} from "../../data/profile";
+import { useLang } from "../../i18n";
 
 function DownloadButton() {
+  const { profile, t } = useLang();
   if (!profile.cvPdf) return null;
   return (
     <Row style={{ justifyContent: "center", position: "relative" }}>
       <Button
         variant="primary"
         href={profile.cvPdf}
-        download="CV-Juan-Manuel-Garcia.pdf"
+        download={profile.cvFile}
         style={{ maxWidth: "250px" }}
       >
         <AiOutlineDownload />
-        &nbsp;Descargar CV
+        &nbsp;{t.cv.download}
       </Button>
     </Row>
   );
@@ -56,6 +50,8 @@ function TitledList({ items }) {
 }
 
 function ResumeNew() {
+  const { profile, experience, cvProjects, education, skills, languages, t } =
+    useLang();
   return (
     <div>
       <Container fluid className="resume-section">
@@ -83,11 +79,11 @@ function ResumeNew() {
             </div>
           </header>
 
-          <Section title="Perfil">
+          <Section title={t.cv.profile}>
             <p>{profile.summary}</p>
           </Section>
 
-          <Section title="Experiencia laboral">
+          <Section title={t.cv.experience}>
             {experience.map((job) => (
               <div className="cv-item" key={job.org}>
                 <div className="cv-item-title">
@@ -119,7 +115,7 @@ function ResumeNew() {
             ))}
           </Section>
 
-          <Section title="Proyectos">
+          <Section title={t.cv.projects}>
             {cvProjects.map((project) => (
               <div className="cv-item" key={project.title}>
                 <div className="cv-item-title">
@@ -142,15 +138,15 @@ function ResumeNew() {
             ))}
           </Section>
 
-          <Section title="Formación">
+          <Section title={t.cv.education}>
             <TitledList items={education} />
           </Section>
 
-          <Section title="Skills">
+          <Section title={t.cv.skills}>
             <LabeledList items={skills} />
           </Section>
 
-          <Section title="Idiomas">
+          <Section title={t.cv.languages}>
             <TitledList items={languages} />
           </Section>
         </article>

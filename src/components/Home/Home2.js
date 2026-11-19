@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/foto.jpg";
 import Tilt from "react-parallax-tilt";
+import { useLang } from "../../i18n";
 
 // En celulares el tilt se activa al tocar y hace que la foto se mueva sola.
 const canHover =
@@ -9,43 +10,41 @@ const canHover =
   window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
 function Home2() {
+  const i = useLang().t.intro;
   return (
     <Container fluid className="home-about-section" id="about">
       <Container>
         <Row>
           <Col md={8} className="home-about-description">
             <h1 style={{ fontSize: "2.6em" }}>
-              DÉJAME <span className="purple"> PRESENTARME </span>
+              {i.titleA} <span className="purple"> {i.titleB} </span>
             </h1>
             <p className="home-about-body">
-              Soy desarrollador Full-Stack y construyo productos completos para
-              clientes: desde la base de datos hasta la app que usa la gente.
+              {i.p1a}
+              <b className="purple">UTN</b>
+              {i.p1b}
+              <b className="purple">UNR</b>
+              {i.p1c}
               <br />
               <br />
-              Trabajo con
+              {i.p2a}
               <i>
-                <b className="purple"> TypeScript, Next.js y React Native </b>
+                <b className="purple"> TypeScript, Next.js, React Native </b>
               </i>
-              en el frontend y mobile, y con
+              {i.p2b}
               <i>
-                <b className="purple"> Supabase, PostgreSQL y Node.js </b>
+                <b className="purple"> Supabase, PostgreSQL, Node.js </b>
               </i>
-              en el backend.
+              {i.p2c}
               <br />
               <br />
-              Integro servicios como la
-              <b className="purple"> API de WhatsApp de Meta </b>
-              y uso
+              {i.p3a}
+              <b className="purple"> {i.p3b} </b>
+              {i.p3c}
               <i>
-                <b className="purple"> herramientas de IA para desarrollo </b>
+                <b className="purple"> {i.p3d} </b>
               </i>
-              (Claude Code, agentes y flujos automatizados) para entregar más
-              rápido sin resignar calidad.
-              <br />
-              <br />
-              Soy Técnico en Programación (<b className="purple">UTN</b>) y
-              estudio Inteligencia Artificial en la{" "}
-              <b className="purple">UNR</b>.
+              {i.p3e}
             </p>
           </Col>
           <Col md={4} className="myAvtar">

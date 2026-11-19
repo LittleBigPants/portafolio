@@ -1,43 +1,34 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import { ImPointRight } from "react-icons/im";
-import { profile } from "../../data/profile";
+import { useLang } from "../../i18n";
 
 function AboutCard() {
+  const { profile, t } = useLang();
+  const a = t.about;
   return (
     <Card className="quote-card-view">
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "left" }}>
-            ¡Hola! Soy <span className="purple">{profile.name}</span>, de{" "}
-            <span className="purple">{profile.location}</span>.
+            {a.hello} <span className="purple">{profile.name}</span>
+            {a.from} <span className="purple">{profile.location}</span>.
             <br />
-            Trabajo como{" "}
-            <span className="purple">Full-Stack Developer freelance</span>,
-            construyendo aplicaciones web, apps móviles y backends para
-            clientes.
+            {a.iam} <span className="purple">{a.degree}</span> {a.study}{" "}
+            <span className="purple">{a.ai}</span>.
             <br />
-            Soy <span className="purple">Técnico en Programación (UTN)</span> y
-            estudio la{" "}
-            <span className="purple">
-              Tecnicatura en Inteligencia Artificial (UNR)
-            </span>
-            .
+            {a.workAs} <span className="purple">{a.role}</span>
+            {a.workRest}
             <br />
             <br />
-            Algunas cosas que me definen:
+            {a.defines}
           </p>
-
           <ul>
-            <li className="about-activity">
-              <ImPointRight /> Programación competitiva (ICPC Argentina 2025) 🏆
-            </li>
-            <li className="about-activity">
-              <ImPointRight /> Desarrollo asistido por IA 🤖
-            </li>
-            <li className="about-activity">
-              <ImPointRight /> Inglés intermedio · Auxiliar Bilingüe 🌍
-            </li>
+            {a.items.map((item) => (
+              <li className="about-activity" key={item}>
+                <ImPointRight /> {item}
+              </li>
+            ))}
           </ul>
         </blockquote>
       </Card.Body>

@@ -5,9 +5,10 @@ import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
 import SocialLinks from "../SocialLinks";
-import { profile } from "../../data/profile";
+import { useLang } from "../../i18n";
 
 function Home() {
+  const { profile, t } = useLang();
   return (
     <section>
       <Container fluid className="home-section" id="home">
@@ -16,14 +17,14 @@ function Home() {
           <Row>
             <Col md={7} className="home-header">
               <h1 style={{ paddingBottom: 15 }} className="heading">
-                ¡Hola!{" "}
+                {t.home.hi}{" "}
                 <span className="wave" role="img" aria-labelledby="wave">
                   👋🏻
                 </span>
               </h1>
 
               <h1 className="heading-name">
-                Soy
+                {t.home.iam}
                 <strong className="main-name"> {profile.name.toUpperCase()}</strong>
               </h1>
 
@@ -35,7 +36,7 @@ function Home() {
             <Col md={5} style={{ paddingBottom: 20 }}>
               <img
                 src={homeLogo}
-                alt="ilustración"
+                alt={t.home.alt}
                 className="img-fluid"
                 style={{ maxHeight: "450px" }}
               />
@@ -48,9 +49,9 @@ function Home() {
       <Container>
         <Row style={{ paddingTop: "50px", paddingBottom: "80px" }}>
           <Col md={12} className="home-about-social">
-            <h1>Contacto</h1>
+            <h1>{t.home.contact}</h1>
             <p>
-              No dudes en <span className="purple">escribirme</span>
+              {t.home.writeA} <span className="purple">{t.home.writeB}</span>
             </p>
             <p>
               <a className="purple" href={`mailto:${profile.email}`}>

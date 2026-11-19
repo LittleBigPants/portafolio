@@ -6,8 +6,10 @@ import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
 import laptopImg from "../../Assets/home-main.svg";
 import Toolstack from "./Toolstack";
+import { useLang } from "../../i18n";
 
 function About() {
+  const a = useLang().t.about;
   return (
     <>
       {" "}
@@ -24,7 +26,7 @@ function About() {
               }}
             >
               <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-                ¿Quién <strong className="purple">soy</strong>?
+                {a.whoA} <strong className="purple">{a.whoB}</strong>{a.whoC}
               </h1>
               <Aboutcard />
             </Col>
@@ -33,17 +35,17 @@ function About() {
               style={{ paddingTop: "120px", paddingBottom: "50px" }}
               className="about-img"
             >
-              <img src={laptopImg} alt="ilustración" className="img-fluid" />
+              <img src={laptopImg} alt="" className="img-fluid" />
             </Col>
           </Row>
           <h1 className="project-heading">
-            <strong className="purple">Skills </strong> profesionales
+            <strong className="purple">{a.skillsA} </strong> {a.skillsB}
           </h1>
 
           <Techstack />
 
           <h1 className="project-heading">
-            <strong className="purple">Herramientas</strong> que uso
+            <strong className="purple">{a.toolsA}</strong> {a.toolsB}
           </h1>
           <Toolstack />
 

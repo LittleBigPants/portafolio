@@ -12,9 +12,10 @@ import {
 } from "react-icons/ai";
 
 import { CgFileDocument } from "react-icons/cg";
-import { profile } from "../data/profile";
+import { useLang } from "../i18n";
 
 function NavBar() {
+  const { profile, t, lang, setLang } = useLang();
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
 
@@ -56,7 +57,7 @@ function NavBar() {
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
               <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Inicio
+                <AiOutlineHome style={{ marginBottom: "2px" }} /> {t.nav.home}
               </Nav.Link>
             </Nav.Item>
 
@@ -66,7 +67,7 @@ function NavBar() {
                 to="/about"
                 onClick={() => updateExpanded(false)}
               >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> Sobre mí
+                <AiOutlineUser style={{ marginBottom: "2px" }} /> {t.nav.about}
               </Nav.Link>
             </Nav.Item>
 
@@ -79,7 +80,7 @@ function NavBar() {
                 <AiOutlineFundProjectionScreen
                   style={{ marginBottom: "2px" }}
                 />{" "}
-                Proyectos
+                {t.nav.projects}
               </Nav.Link>
             </Nav.Item>
 
@@ -89,10 +90,22 @@ function NavBar() {
                 to="/resume"
                 onClick={() => updateExpanded(false)}
               >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> CV
+                <CgFileDocument style={{ marginBottom: "2px" }} /> {t.nav.cv}
               </Nav.Link>
             </Nav.Item>
 
+            <Nav.Item>
+              <Nav.Link
+                as="button"
+                className="lang-switch"
+                onClick={() => {
+                  setLang(lang === "es" ? "en" : "es");
+                  updateExpanded(false);
+                }}
+              >
+                {t.nav.other}
+              </Nav.Link>
+            </Nav.Item>
             <Nav.Item className="fork-btn">
               <Button
                 href={profile.github}
