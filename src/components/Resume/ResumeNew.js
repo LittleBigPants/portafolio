@@ -67,7 +67,7 @@ function ResumeNew() {
                 {profile.github.replace("https://", "")}
               </a>
               <a href={profile.linkedin} target="_blank" rel="noreferrer">
-                {profile.linkedin.replace("https://www.", "")}
+                {decodeURI(profile.linkedin).replace("https://www.", "")}
               </a>
             </div>
             <div className="cv-contact" style={{ marginTop: 6 }}>

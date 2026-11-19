@@ -11,7 +11,7 @@ export const profile = {
   whatsapp: "https://wa.me/5493413550070",
   github: "https://github.com/LittleBigPants",
   githubUser: "LittleBigPants",
-  linkedin: "https://www.linkedin.com/in/juan-manuel-garcia-99952b270",
+  linkedin: "https://www.linkedin.com/in/juan-manuel-garc%C3%ADa-99952b270",
   cvPdf: "/CV-Juan-Manuel-Garcia.pdf",
   cvFile: "CV-Juan-Manuel-Garcia.pdf",
   summary:
