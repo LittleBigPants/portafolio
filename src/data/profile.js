@@ -87,19 +87,6 @@ export const projects = [
     mine:
       "Lo diseñé y lo construí entero: un programador de tareas, un filtro en dos pasos con puntaje, postulaciones en paralelo, un panel web para ver qué hace y frenos que no dependen de la IA (topes diarios, pausa, registro de cada acción).",
     stack: "Claude Code · Python · Playwright · Docker · Telegram",
-    cases: [
-      {
-        title: "Darle autonomía sin perder el control",
-        problem:
-          "Un agente que postula en mi nombre puede equivocarse muchas veces por hora, y yo no puedo revisar cada paso.",
-        cause:
-          "Las reglas escritas para la IA no alcanzan: si el límite lo vigila el mismo agente, un error suyo también se saltea el límite.",
-        fix:
-          "Puse los frenos fuera de la IA: un programador común decide cuándo corre, hay topes por día y por empresa que se verifican en código, y un resumen diario muestra todo lo que el agente cambió por su cuenta.",
-        learned:
-          "La autonomía de un agente se diseña con límites que el agente no puede modificar.",
-      },
-    ],
   },
   {
     key: "servidor",

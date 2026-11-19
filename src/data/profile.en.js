@@ -78,19 +78,6 @@ export const projects = [
     mine:
       "I designed and built all of it: a task scheduler, a two-step filter with scoring, parallel applications, a web panel to see what it is doing, and brakes that do not depend on the AI (daily caps, pause, a log of every action).",
     stack: "Claude Code · Python · Playwright · Docker · Telegram",
-    cases: [
-      {
-        title: "Giving it autonomy without losing control",
-        problem:
-          "An agent that applies in my name can make many mistakes per hour, and I cannot review every step.",
-        cause:
-          "Rules written for the AI are not enough: if the agent itself watches the limit, one of its mistakes also skips the limit.",
-        fix:
-          "I put the brakes outside the AI: a plain scheduler decides when it runs, daily and per-company caps are checked in code, and a daily summary shows everything the agent changed on its own.",
-        learned:
-          "An agent's autonomy is designed with limits the agent cannot modify.",
-      },
-    ],
   },
   {
     key: "servidor",
